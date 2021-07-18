@@ -17,7 +17,7 @@ export default function CreatorDashboard() {
     loadNFTs();
   }, []);
   async function loadNFTs() {
-    const portis = new Portis("766cf47c-9ba2-4638-8853-8998d2692750","mainnet");
+    const portis = new Portis(process.env.PORTIS_ID,"mainnet");
     const provider = new ethers.providers.Web3Provider(portis.web3Provider);
 
 //     const web3Modal = new Web3Modal({
