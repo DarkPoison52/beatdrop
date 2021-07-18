@@ -1,3 +1,4 @@
+require("dotenv").config();
 import axios from "axios";
 import { ethers } from "ethers";
 import Web3Modal from "web3modal";
