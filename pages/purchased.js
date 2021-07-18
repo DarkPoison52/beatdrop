@@ -1,7 +1,9 @@
+require("dotenv").config();
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
+
 
 // Implementing Portis Wallet
 import Portis from "@portis/web3";
@@ -17,7 +19,7 @@ export default function MyAssets() {
     loadNFTs();
   }, []);
   async function loadNFTs() {
-    const portis = new Portis("766cf47c-9ba2-4638-8853-8998d2692750","mainnet");
+    const portis = new Portis(process.env.PORTIS_ID,"mainnet");
     const provider = new ethers.providers.Web3Provider(portis.web3Provider);
 
 //     const web3Modal = new Web3Modal({
