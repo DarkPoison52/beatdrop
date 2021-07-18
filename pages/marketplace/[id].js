@@ -60,12 +60,13 @@ export default function Home(props) {
   }
 
   async function buyNft(nft) {
-    // const portis = new Portis("766cf47c-9ba2-4638-8853-8998d2692750","mainnet");
-    // const provider = new ethers.providers.Web3Provider(portis.web3Provider);
+    const portis = new Portis(process.env.PORTIS_ID,"mainnet");
+    const provider = new ethers.providers.Web3Provider(portis.web3Provider);
 
-    const web3Modal = new Web3Modal();
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
+//     const web3Modal = new Web3Modal();
+//     const connection = await web3Modal.connect();
+//     const provider = new ethers.providers.Web3Provider(connection);
+    
     const signer = provider.getSigner();
     const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
 
