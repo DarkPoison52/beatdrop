@@ -1,3 +1,4 @@
+require("dotenv").config();
 import axios from "axios";
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
