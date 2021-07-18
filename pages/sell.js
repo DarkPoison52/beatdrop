@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { useState } from "react";
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
